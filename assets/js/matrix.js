@@ -34,7 +34,7 @@ const draw = () => {
         rainDrops[i]++;
     }
 };
-setInterval(draw, 50);
+setInterval(draw, 75);
 
 // window.addEventListener('resize', () => {
 //     canvas.width = window.innerWidth;
