@@ -7,7 +7,7 @@ canvas.height = window.innerHeight;
 const katakana = 'アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン';
 const latin = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 const nums = '0123456789';
-const customWords = ['Immortal-Pi', 'Amruth Pai', 'Pai', 'Texas','UT Dallas'];
+const customWords = ['Amruth Pai','Immortal Pi', 'Pai', 'Texas','UT Dallas'];
 
 // const alphabet = katakana + latin + nums;
 const allCharacters = [...katakana.repeat(3), ...latin.repeat(3), ...nums.repeat(3), ...customWords];
