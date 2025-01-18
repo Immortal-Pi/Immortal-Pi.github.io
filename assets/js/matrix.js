@@ -7,8 +7,10 @@ canvas.height = window.innerHeight;
 const katakana = 'アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン';
 const latin = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 const nums = '0123456789';
+const customWords = ['Immortal-Pi', 'Amruth', 'Pai', 'Texas','UT Dallas'];
 
-const alphabet = katakana + latin + nums;
+// const alphabet = katakana + latin + nums;
+const allCharacters = [...katakana, ...latin, ...nums, ...customWords];
 const fontSize = 16;
 const columns = canvas.width/fontSize;
 const rainDrops = Array.from({ length: columns }).fill(canvas.height);
@@ -23,18 +25,34 @@ const draw = () => {
     context.fillStyle = '#0F0';
     context.font = fontSize + 'px monospace';
 
-    for(let i = 0; i < rainDrops.length; i++)
-    {
-        const text = alphabet.charAt(Math.floor(Math.random() * alphabet.length));
-        context.fillText(text, i*fontSize, rainDrops[i]*fontSize);
+    // for(let i = 0; i < rainDrops.length; i++)
+    // {
+    //     const text = alphabet.charAt(Math.floor(Math.random() * alphabet.length));
+    //     context.fillText(text, i*fontSize, rainDrops[i]*fontSize);
 
-        if(rainDrops[i]*fontSize > canvas.height && Math.random() > 0.975){
+    //     if(rainDrops[i]*fontSize > canvas.height && Math.random() > 0.975){
+    //         rainDrops[i] = 0;
+    //     }
+    //     rainDrops[i]++;
+    // }
+    for (let i = 0; i < rainDrops.length; i++) {
+        // Randomly pick a character or word from allCharacters
+        const randomIndex = Math.floor(Math.random() * allCharacters.length);
+        const text = allCharacters[randomIndex];
+
+        // Render the character/word
+        context.fillText(text, i * fontSize, rainDrops[i] * fontSize);
+
+        // Reset drop to top after it goes off-screen or with a small random chance
+        if (rainDrops[i] * fontSize > canvas.height && Math.random() > 0.975) {
             rainDrops[i] = 0;
         }
+
+        // Move the drop down
         rainDrops[i]++;
     }
 };
-setInterval(draw, 75);
+setInterval(draw, 60);
 
 // window.addEventListener('resize', () => {
 //     canvas.width = window.innerWidth;
