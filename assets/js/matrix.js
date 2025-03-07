@@ -7,10 +7,11 @@ canvas.height = window.innerHeight;
 const katakana = 'アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン';
 const latin = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 const nums = '0123456789';
-const customWords = ['Amruth Pai','Immortal Pi', 'Pai', 'Texas','UT Dallas'];
+const customWords = ['Amruth Pai','Immortal Pi', 'Pai'];
+const customWords2 = ['Data Scientist','UT Dallas', 'Texas'];
 
 // const alphabet = katakana + latin + nums;
-const allCharacters = [...katakana.repeat(3), ...latin.repeat(3), ...nums.repeat(3), ...customWords];
+const allCharacters = [...katakana.repeat(3), ...latin.repeat(3), ...nums.repeat(3), ...customWords, ...customWords2];
 const fontSize = 16;
 const columns = canvas.width/fontSize;
 const rainDrops = Array.from({ length: columns }).fill(canvas.height);
