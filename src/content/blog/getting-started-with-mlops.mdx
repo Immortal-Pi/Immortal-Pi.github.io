@@ -1,0 +1,39 @@
+---
+title: "Getting Started with MLOps: Lessons from Building TumorFlow"
+date: "2025-02-15"
+excerpt: "Key takeaways from building an end-to-end ML pipeline for kidney tumor detection, focusing on MLOps best practices."
+tags: ["MLOps", "Machine Learning", "Docker", "DVC"]
+---
+
+## Why MLOps Matters
+
+When I started building TumorFlow, my kidney tumor detection project, I quickly realized that training a model is only a small part of the puzzle. The real challenge lies in making your ML workflow **reproducible, scalable, and maintainable**.
+
+## Key Principles I Learned
+
+### 1. Version Everything
+
+Not just your code — your data, your models, and your pipeline configurations. I used **DVC (Data Version Control)** to track datasets and model artifacts alongside Git for code versioning.
+
+### 2. Containerize Early
+
+Docker was essential for ensuring consistent environments across development, testing, and deployment. No more "it works on my machine" issues.
+
+### 3. Automate the Pipeline
+
+From data ingestion to model evaluation, every step should be automated. This makes it trivial to retrain models when new data arrives or when you want to experiment with different architectures.
+
+### 4. Monitor in Production
+
+Deploying a model is not the finish line. Setting up monitoring for model drift and performance degradation is critical for maintaining reliability.
+
+## Tools That Made a Difference
+
+- **DVC** for data and model versioning
+- **Docker** for containerization
+- **GitHub Actions** for CI/CD
+- **AWS EC2** for deployment
+
+## What's Next
+
+I'm now applying these same principles to my Surge Sense project, predicting surge pricing for ride-sharing services. The MLOps foundation I built with TumorFlow made this significantly easier to bootstrap.

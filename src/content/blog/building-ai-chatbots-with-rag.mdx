@@ -1,0 +1,53 @@
+---
+title: "Building AI Chatbots with RAG: SQL Agent vs Vector Search"
+date: "2025-01-20"
+excerpt: "A deep dive into comparing SQL Agent and RAG approaches for building chatbots over structured data."
+tags: ["LLM", "RAG", "LangChain", "AI"]
+---
+
+## The Problem
+
+When building chatbots that need to answer questions about structured, tabular data, you have two main approaches:
+
+1. **SQL Agent** — Let the LLM generate SQL queries on the fly
+2. **RAG (Retrieval-Augmented Generation)** — Embed the data and use vector similarity search
+
+But which one is better? I built both to find out.
+
+## SQL Agent Approach
+
+Using LangChain's SQL Agent with Azure OpenAI, the agent:
+
+- Inspects the database schema automatically
+- Generates precise SQL queries based on natural language questions
+- Returns exact, deterministic answers
+
+**Pros:** Precise answers, no data duplication, handles complex aggregations well.
+
+**Cons:** Requires database access, can be slow for complex joins.
+
+## RAG Approach
+
+Using ChromaDB as the vector store:
+
+- Data is chunked and embedded
+- Relevant chunks are retrieved via similarity search
+- The LLM generates answers from retrieved context
+
+**Pros:** Works with unstructured data, fast retrieval.
+
+**Cons:** Can miss precise numerical answers, embedding quality matters.
+
+## The Verdict
+
+For **structured, tabular data**, SQL Agent clearly outperformed RAG. The ability to generate precise queries means you get exact numbers, correct aggregations, and reliable filtering.
+
+RAG shines when dealing with **unstructured or hybrid data** where exact lookup is less important than semantic understanding.
+
+## When to Use What
+
+| Scenario | Recommendation |
+|----------|---------------|
+| Financial reports, databases | SQL Agent |
+| Documentation, knowledge bases | RAG |
+| Mixed structured + unstructured | Hybrid approach |
