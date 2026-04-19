@@ -36,7 +36,7 @@ export const linkedinArticles: LinkedInArticle[] = [
     title: "Network Visualization using Large Language Models",
     date: "2024-12-13",
     excerpt:
-      "Exploring network visualization with Neo4j and Gephi, enriched by LLM-driven semantic analysis. A comparison of tools and techniques for graph-based knowledge representation and storytelling.",
+      "Exploring network visualization with Neo4j, Gephi and microsoft GraphRAG, enriched by LLM-driven semantic analysis. A comparison of tools and techniques for graph-based knowledge representation and storytelling.",
     tags: ["LLM", "Neo4j", "Gephi", "Network Analysis"],
     linkedinUrl:
       "https://www.linkedin.com/pulse/network-visualization-using-large-language-models-amruth-pai-fqh3c/",
