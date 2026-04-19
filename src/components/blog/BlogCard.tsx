@@ -1,27 +1,35 @@
 import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { BlogPost } from "@/lib/types";
 
 export default function BlogCard({ post }: { post: BlogPost }) {
   return (
-    <Link
-      href={`/blog/${post.slug}`}
-      className="block bg-white/5 border border-green-500/20 rounded-xl p-6 hover:border-green-500/40 hover:bg-white/10 transition-all group"
-    >
-      <p className="text-green-400 text-sm mb-2">{post.date}</p>
-      <h3 className="text-white font-semibold text-lg mb-2 group-hover:text-green-400 transition-colors">
-        {post.title}
-      </h3>
-      <p className="text-gray-400 text-sm mb-4">{post.excerpt}</p>
-      <div className="flex flex-wrap gap-1.5">
-        {post.tags.map((tag) => (
-          <span
-            key={tag}
-            className="text-xs bg-green-500/10 text-green-400 px-2 py-0.5 rounded-full border border-green-500/20"
-          >
-            {tag}
-          </span>
-        ))}
-      </div>
+    <Link href={`/blog/${post.slug}`} className="block group">
+      <Card className="bg-card border-border/50 hover:border-primary/40 transition-colors duration-300">
+        <CardHeader>
+          <div className="flex items-start justify-between gap-4">
+            <div>
+              <CardDescription className="font-heading text-xs">{post.date}</CardDescription>
+              <CardTitle className="text-lg group-hover:text-primary transition-colors mt-1">
+                {post.title}
+              </CardTitle>
+            </div>
+            <ArrowUpRight className="size-4 text-muted-foreground group-hover:text-primary transition-colors shrink-0 mt-1" />
+          </div>
+        </CardHeader>
+        <CardContent className="flex flex-col gap-3">
+          <p className="text-sm text-muted-foreground">{post.excerpt}</p>
+          <div className="flex flex-wrap gap-1.5">
+            {post.tags.map((tag) => (
+              <Badge key={tag} variant="secondary" className="text-xs">
+                {tag}
+              </Badge>
+            ))}
+          </div>
+        </CardContent>
+      </Card>
     </Link>
   );
 }

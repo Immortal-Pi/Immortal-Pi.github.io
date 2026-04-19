@@ -2,8 +2,13 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
-import { FaBars, FaTimes, FaFileDownload } from "react-icons/fa";
+import { useEffect, useRef, useState } from "react";
+import { Menu, X, Download } from "lucide-react";
+import { motion, useReducedMotion } from "motion/react";
+import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
+import { cn } from "@/lib/utils";
+import GlitchText from "@/components/fx/GlitchText";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -16,76 +21,98 @@ const navLinks = [
 export default function Navbar() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [hidden, setHidden] = useState(false);
+  const lastY = useRef(0);
+  const reduced = useReducedMotion();
+
+  useEffect(() => {
+    const onScroll = () => {
+      const y = window.scrollY;
+      const delta = y - lastY.current;
+      if (y < 64) setHidden(false);
+      else if (delta > 4) setHidden(true);
+      else if (delta < -4) setHidden(false);
+      lastY.current = y;
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-green-500/20">
-      <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-        <Link href="/" className="text-green-400 font-bold text-xl hover:text-green-300 transition-colors">
-          Amruth Pai
+    <motion.nav
+      animate={{ y: hidden && !reduced ? -80 : 0 }}
+      transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+      className="fixed top-0 left-0 right-0 z-50 bg-background/60 backdrop-blur-md border-b border-border/50 supports-[backdrop-filter]:bg-background/40"
+    >
+      <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+        <Link
+          href="/"
+          className="font-heading font-bold text-lg tracking-tight text-foreground hover:text-primary transition-colors"
+        >
+          <GlitchText always>
+            AP<span className="text-primary">_</span>
+          </GlitchText>
         </Link>
 
-        {/* Desktop nav */}
-        <div className="hidden md:flex items-center gap-6">
+        {/* Desktop */}
+        <div className="hidden md:flex items-center gap-1">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className={`text-sm font-medium transition-colors ${
+              className={cn(
+                "relative px-3 py-1.5 text-sm font-medium transition-colors rounded-md",
                 pathname === link.href
-                  ? "text-green-400"
-                  : "text-gray-300 hover:text-green-400"
-              }`}
+                  ? "text-primary bg-primary/10"
+                  : "text-muted-foreground hover:text-foreground hover:bg-muted"
+              )}
             >
               {link.label}
             </Link>
           ))}
-          <a
-            href="/resume/Amruth_DS_resume.pdf"
-            download
-            className="flex items-center gap-1.5 text-sm bg-green-500/20 text-green-400 px-3 py-1.5 rounded-md hover:bg-green-500/30 transition-colors border border-green-500/30"
-          >
-            <FaFileDownload className="text-xs" />
-            Resume
-          </a>
+          <Separator orientation="vertical" className="mx-2 h-5" />
+          <Button variant="outline" size="sm" nativeButton={false} render={<a href="/resume/Amruth_DS_resume.pdf" download />}>
+              <Download data-icon="inline-start" />
+              Resume
+          </Button>
         </div>
 
         {/* Mobile toggle */}
-        <button
-          className="md:hidden text-gray-300 hover:text-green-400 transition-colors"
+        <Button
+          variant="ghost"
+          size="icon"
+          className="md:hidden"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
         >
-          {mobileOpen ? <FaTimes size={20} /> : <FaBars size={20} />}
-        </button>
+          {mobileOpen ? <X /> : <Menu />}
+        </Button>
       </div>
 
-      {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden bg-black/95 border-b border-green-500/20 px-4 py-4 space-y-3">
+        <div className="md:hidden bg-background/95 backdrop-blur-md border-b border-border px-6 py-4 flex flex-col gap-1">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               onClick={() => setMobileOpen(false)}
-              className={`block text-sm font-medium transition-colors ${
+              className={cn(
+                "px-3 py-2 text-sm font-medium rounded-md transition-colors",
                 pathname === link.href
-                  ? "text-green-400"
-                  : "text-gray-300 hover:text-green-400"
-              }`}
+                  ? "text-primary bg-primary/10"
+                  : "text-muted-foreground hover:text-foreground hover:bg-muted"
+              )}
             >
               {link.label}
             </Link>
           ))}
-          <a
-            href="/resume/Amruth_DS_resume.pdf"
-            download
-            className="inline-flex items-center gap-1.5 text-sm bg-green-500/20 text-green-400 px-3 py-1.5 rounded-md border border-green-500/30"
-          >
-            <FaFileDownload className="text-xs" />
-            Resume
-          </a>
+          <Separator className="my-2" />
+          <Button variant="outline" size="sm" className="w-fit" nativeButton={false} render={<a href="/resume/Amruth_DS_resume.pdf" download />}>
+              <Download data-icon="inline-start" />
+              Resume
+          </Button>
         </div>
       )}
-    </nav>
+    </motion.nav>
   );
 }

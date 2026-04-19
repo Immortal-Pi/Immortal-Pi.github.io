@@ -2,47 +2,65 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { ChevronDown, ChevronUp } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { Education } from "@/lib/types";
 
 export default function EducationCard({ edu }: { edu: Education }) {
   const [showCourses, setShowCourses] = useState(false);
 
   return (
-    <div className="bg-white/5 border border-green-500/20 rounded-xl p-6">
-      <div className="flex items-center gap-4 mb-4">
-        <Image
-          src={edu.logoSrc}
-          alt={edu.school}
-          width={60}
-          height={60}
-          className="rounded-lg"
-        />
-        <div>
-          <h3 className="text-white font-semibold text-lg">{edu.degree}</h3>
-          <p className="text-gray-400 text-sm italic">{edu.school}</p>
+    <Card className="bg-card border-border/50 corner-brackets">
+      <CardHeader>
+        <div className="flex items-center gap-4">
+          <Image
+            src={edu.logoSrc}
+            alt={edu.school}
+            width={48}
+            height={48}
+            className="rounded-lg border border-border"
+          />
+          <div className="flex-1">
+            <CardTitle className="text-base">{edu.degree}</CardTitle>
+            <CardDescription>{edu.school}</CardDescription>
+          </div>
         </div>
-      </div>
-      <div className="flex items-center justify-between text-sm text-gray-400 mb-2">
-        <span>GPA: {edu.gpa}</span>
-        <span>{edu.startDate} &ndash; {edu.endDate}</span>
-      </div>
-      {edu.coursework && (
-        <>
-          <button
-            onClick={() => setShowCourses(!showCourses)}
-            className="text-sm text-green-400 hover:text-green-300 underline decoration-dashed transition-colors mt-2"
-          >
-            {showCourses ? "Hide" : "Show"} Coursework
-          </button>
-          {showCourses && (
-            <ul className="mt-3 space-y-1 text-gray-300 text-sm list-disc list-inside">
-              {edu.coursework.map((course) => (
-                <li key={course}>{course}</li>
-              ))}
-            </ul>
-          )}
-        </>
-      )}
-    </div>
+      </CardHeader>
+      <CardContent className="flex flex-col gap-3">
+        <div className="flex items-center justify-between text-sm text-muted-foreground">
+          <span>GPA: <span className="text-foreground font-medium">{edu.gpa}</span></span>
+          <span className="font-heading text-xs text-primary">
+            {edu.startDate} &ndash; {edu.endDate}
+          </span>
+        </div>
+        {edu.coursework && (
+          <>
+            <Button
+              variant="ghost"
+              size="sm"
+              className="w-fit text-primary hover:text-primary/80 px-0"
+              onClick={() => setShowCourses(!showCourses)}
+            >
+              {showCourses ? "Hide" : "Show"} Coursework
+              {showCourses
+                ? <ChevronUp data-icon="inline-end" />
+                : <ChevronDown data-icon="inline-end" />
+              }
+            </Button>
+            {showCourses && (
+              <ul className="flex flex-col gap-1.5 text-sm text-muted-foreground pl-1">
+                {edu.coursework.map((course) => (
+                  <li key={course} className="flex gap-2">
+                    <span className="text-primary shrink-0">&#9656;</span>
+                    {course}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </>
+        )}
+      </CardContent>
+    </Card>
   );
 }

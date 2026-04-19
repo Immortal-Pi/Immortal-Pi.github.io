@@ -1,26 +1,34 @@
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Experience } from "@/lib/types";
 
 export default function TimelineItem({ exp }: { exp: Experience }) {
   return (
-    <div className="relative pl-8 pb-10 border-l border-green-500/30 last:border-l-0 last:pb-0">
-      <div className="absolute -left-2 top-0 w-4 h-4 rounded-full bg-green-500 border-2 border-black" />
-      <div className="bg-white/5 border border-green-500/20 rounded-xl p-6">
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
-          <h3 className="text-white font-semibold text-lg">{exp.role}</h3>
-          <span className="text-green-400 text-sm">
-            {exp.startDate} &ndash; {exp.endDate}
-          </span>
-        </div>
-        <p className="text-gray-400 text-sm mb-4">
-          {exp.company}
-          {exp.location && `, ${exp.location}`}
-        </p>
-        <ul className="space-y-2 text-gray-300 text-sm list-disc list-inside">
-          {exp.bullets.map((bullet, i) => (
-            <li key={i}>{bullet}</li>
-          ))}
-        </ul>
-      </div>
+    <div className="relative pl-8 pb-8 border-l border-border last:border-l-0 last:pb-0">
+      <div className="absolute -left-[5px] top-2 size-2.5 rounded-full bg-primary ring-4 ring-background animate-pulse-neon" />
+      <Card className="bg-card border-border/50 hover:border-primary/30 transition-colors corner-brackets">
+        <CardHeader>
+          <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1">
+            <CardTitle className="text-base">{exp.role}</CardTitle>
+            <span className="font-heading text-xs text-primary whitespace-nowrap">
+              {exp.startDate} &ndash; {exp.endDate}
+            </span>
+          </div>
+          <CardDescription>
+            {exp.company}
+            {exp.location && `, ${exp.location}`}
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <ul className="flex flex-col gap-2">
+            {exp.bullets.map((bullet, i) => (
+              <li key={i} className="flex gap-3 text-sm text-muted-foreground">
+                <span className="text-primary mt-1 shrink-0">&#9656;</span>
+                {bullet}
+              </li>
+            ))}
+          </ul>
+        </CardContent>
+      </Card>
     </div>
   );
 }

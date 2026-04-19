@@ -48,3 +48,11 @@ export interface BlogPost {
   tags: string[];
   content: string;
 }
+
+export interface LinkedInArticle {
+  title: string;
+  date: string;
+  excerpt: string;
+  tags: string[];
+  linkedinUrl: string;
+}

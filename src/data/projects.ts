@@ -68,10 +68,10 @@ export const projects: Project[] = [
     title: "Surge Sense",
     slug: "surge-sense",
     shortDescription:
-      "ML pipeline to predict surge pricing for cab rides, comparing Uber and Lyft services. Focus on MLOps principles and scalability.",
+      "Built an end-to-end ML pipeline to predict surge pricing for Uber and Lyft rides using historical ride, weather, and event data. Leveraged MLOps principles with MLflow, DVC, and Docker.",
     fullDescription:
-      "The goal of this project was to build a full end-to-end machine learning pipeline to predict surge pricing for cab rides, specifically comparing Uber and Lyft services in the New York City area. The pipeline aimed to leverage historical ride, weather, and event data to forecast price surges based on factors such as time, location, weather, and demand patterns. As part of the modeling phase, we utilized multiple machine learning algorithms—including Random Forest, XGBoost, and Gradient Descent-based models—and selected the best-performing model for accurate surge price prediction.",
-    techStack: ["Python", "Keras", "CICD", "AWS EC2", "Docker", "MLFlow", "DVC"],
+      "Built a full end-to-end machine learning pipeline to predict surge pricing for cab rides, specifically comparing Uber and Lyft services in the New York City area. The pipeline leverages historical ride, weather, and event data to forecast price surges based on factors such as time, location, weather, and demand patterns. Utilized multiple machine learning algorithms\u2014including Random Forest, XGBoost, and Gradient Descent-based models\u2014and selected the best-performing model for accurate surge price prediction. The project emphasizes MLOps principles with MLflow for experiment tracking, DVC for data versioning, and Docker for reproducible deployments.",
+    techStack: ["Python", "Keras", "CI/CD", "AWS EC2", "Docker", "MLflow", "DVC"],
     githubUrl: "https://github.com/Immortal-Pi/SurgeSense",
     icon: "FaDollarSign",
     dates: "January 2025 - February 2025",
@@ -100,5 +100,31 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/Immortal-Pi/airlines_management",
     icon: "FaPlane",
     dates: "August 2024 - November 2024",
+  },
+  {
+    title: "CareerGuidanceAI",
+    slug: "career-guidance-ai",
+    shortDescription:
+      "An agentic AI career guidance system using LangGraph and multi-agent orchestration to provide personalized career recommendations, skill gap analysis, and learning path generation.",
+    fullDescription:
+      "Built an agentic AI career guidance system using LangGraph with multi-agent orchestration to deliver personalized career recommendations. Implemented skill gap analysis agents that compare user profiles against real-time job market data to identify upskilling opportunities. Designed a learning path generation pipeline that curates courses, certifications, and projects tailored to target roles. Deployed the application with a Streamlit interface for interactive career exploration and dynamic agent-driven conversations.",
+    techStack: ["Python", "LangGraph", "LangChain", "Azure OpenAI", "Streamlit"],
+    githubUrl: "https://github.com/Immortal-Pi/career-guidance-agent",
+    icon: "FaGraduationCap",
+    dates: "2025",
+    featured: true,
+  },
+  {
+    title: "PlanMyTrip",
+    slug: "plan-my-trip",
+    shortDescription:
+      "An AI-powered travel planning assistant using multi-agent workflows to generate personalized itineraries, recommend destinations, optimize budgets, and provide real-time travel insights.",
+    fullDescription:
+      "Developed an AI-powered travel planning assistant using multi-agent workflows built with LangGraph to generate personalized itineraries. Implemented destination recommendation agents that factor in user preferences, seasonality, and budget constraints for optimal trip planning. Built budget optimization modules that compare flights, accommodations, and activities across multiple providers to minimize costs. Integrated real-time travel data APIs to provide up-to-date pricing, weather forecasts, and local event information for informed decision-making.",
+    techStack: ["Python", "LangGraph", "LangChain", "OpenAI API", "Streamlit"],
+    githubUrl: "https://github.com/Immortal-Pi/PlanMyTrip",
+    icon: "FaMapPin",
+    dates: "2025",
+    featured: true,
   },
 ];

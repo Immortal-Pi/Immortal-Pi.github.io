@@ -1,17 +1,21 @@
 import type { Metadata } from "next";
-import { Source_Sans_3, Geist } from "next/font/google";
+import { Space_Mono, Sora } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import MatrixRain from "@/components/layout/MatrixRain";
 import { cn } from "@/lib/utils";
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
-
-const sourceSans = Source_Sans_3({
-  variable: "--font-source-sans",
+const sora = Sora({
   subsets: ["latin"],
-  weight: ["300", "400", "600", "700"],
+  variable: "--font-sans",
+  weight: ["300", "400", "500", "600", "700"],
+});
+
+const spaceMono = Space_Mono({
+  subsets: ["latin"],
+  variable: "--font-heading",
+  weight: ["400", "700"],
 });
 
 export const metadata: Metadata = {
@@ -29,11 +33,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={cn("h-full", "antialiased", sourceSans.variable, "font-sans", geist.variable)}>
-      <body className="min-h-full flex flex-col">
+    <html lang="en" className={cn("h-full antialiased", sora.variable, spaceMono.variable)}>
+      <body className="min-h-full flex flex-col relative">
         <MatrixRain />
+        <div className="scanlines" aria-hidden />
         <Navbar />
-        <main className="flex-1">{children}</main>
+        <main className="relative z-10 flex-1">{children}</main>
         <Footer />
       </body>
     </html>

@@ -24,9 +24,9 @@ export const education: Education[] = [
   {
     degree: "BE Computer Science",
     school: "Nitte Meenakshi Institute of Technology",
-    gpa: "3.70",
-    startDate: "August 2015",
-    endDate: "May 2019",
+    gpa: "3.65",
+    startDate: "Jun 2015",
+    endDate: "Aug 2019",
     logoSrc: "/images/images.png",
   },
 ];
