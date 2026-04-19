@@ -23,7 +23,7 @@ export default function BlogPageClient({ items }: { items: LinkedInArticle[] }) 
             style={{ animationDelay: "0.4s", animationFillMode: "forwards" }}
           >
             <TypedText
-              text="Thoughts on machine learning, AI engineering, and building intelligent systems — including articles published on LinkedIn."
+              text="Thoughts on machine learning, AI engineering, and building intelligent systems - including articles published on LinkedIn."
               delay={500}
               speed={22}
             />

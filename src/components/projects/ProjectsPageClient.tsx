@@ -23,7 +23,7 @@ export default function ProjectsPageClient() {
             style={{ animationDelay: "0.4s", animationFillMode: "forwards" }}
           >
             <TypedText
-              text="ML, AI, and data engineering work — from deep learning models to production pipelines and intelligent applications."
+              text="ML, AI, and data engineering work - from deep learning models to production pipelines and intelligent applications."
               delay={500}
               speed={22}
             />

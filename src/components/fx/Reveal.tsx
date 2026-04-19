@@ -19,7 +19,7 @@ export function Reveal({ children, delay = 0, y = 24, className }: Props) {
       className={className}
       initial={{ opacity: 0, y }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-10%" }}
+      viewport={{ once: false, margin: "-10%" }}
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay }}
     >
       {children}
@@ -48,7 +48,7 @@ export function RevealStagger({ children, className }: { children: React.ReactNo
       variants={staggerContainer}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: true, margin: "-10%" }}
+      viewport={{ once: false, margin: "-10%" }}
     >
       {children}
     </motion.div>
