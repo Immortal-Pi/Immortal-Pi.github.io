@@ -20,7 +20,7 @@
 	<!-- Wrapper -->
 	<canvas id="Matrix"></canvas>
 	<script src="./assets/js/matrix.js"></script>
-	<div ckass="container">
+	<div class="container">
 	<div id="wrapper">
 
 		<!-- Header -->
@@ -198,11 +198,10 @@
 								href="https://github.com/Immortal-Pi/SurgeSense" class="icon alt"><i
 									class="icon brands fa-github  alt" aria-hidden="true"
 									style="text-decoration: none;"></i></a></h3>
-						<p>A machine learning pipeline to predict surge pricing for cab rides, specifically comparing Uber and Lyft services. 
-							The pipeline aimed to leverage historical ride, weather, and event data to forecast price surges.
-							Keeping the focus on MLOps principles and scalability
+						<p>Built an end-to-end ML pipeline to predict surge pricing for Uber and Lyft rides using historical ride, weather, and event data.
+							Leveraged MLOps principles with MLflow, DVC, and Docker for scalable experimentation and deployment.
 						</p>
-						<p style="font-style: italic;">Python, Keras, CICD, AWS EC2, Dockers, MLFlow, DVC</p>
+						<p style="font-style: italic;">Python, Keras, CI/CD, AWS EC2, Docker, MLflow, DVC</p>
 						<a class="button" style="font-size: small;" id="learnMoreBtn7">Learn More</a>
 					</li>
 
@@ -231,12 +230,43 @@
 									class="icon brands fa-github  alt" aria-hidden="true"
 									style="text-decoration: none;"></i></a>
 						</h3>
-						<p>Web-based application designed to streamline and automate the management of an airline's core operations. 
+						<p>Web-based application designed to streamline and automate the management of an airline's core operations.
 							The system integrates features for managing flights, passengers, bookings, employee details, routes, fares, and transactions.
 						</p>
 						<p style="font-style: italic;">SQLite, Streamlit, MongoDB, Python </p>
 						<a class="button" style="font-size: small;" id="learnMoreBtn6">Learn More</a>
 					</li>
+
+					<li>
+						<span class="icon solid major style1"><i class="fa-solid fa-robot" style="font-size: 2.75rem;
+										line-height: 1.3;"></i></span><br>
+						<h3>CareerGuidanceAI<br>
+							<a href="https://github.com/Immortal-Pi/career-guidance-agent" class="icon alt"><i
+									class="icon brands fa-github  alt" aria-hidden="true"
+									style="text-decoration: none;"></i></a>
+						</h3>
+						<p>An agentic AI career guidance system using LangGraph and multi-agent orchestration to provide personalized career recommendations,
+							skill gap analysis, and learning path generation based on user profiles and market data.
+						</p>
+						<p style="font-style: italic;">Python, LangGraph, LangChain, Azure OpenAI, Streamlit</p>
+						<a class="button" style="font-size: small;" id="learnMoreBtn9">Learn More</a>
+					</li>
+
+					<li>
+						<span class="icon solid major style4"><i class="fa-solid fa-plane" style="font-size: 2.75rem;
+										line-height: 1.3;"></i></span><br>
+						<h3>PlanMyTrip<br>
+							<a href="https://github.com/Immortal-Pi/PlanMyTrip" class="icon alt"><i
+									class="icon brands fa-github  alt" aria-hidden="true"
+									style="text-decoration: none;"></i></a>
+						</h3>
+						<p>An AI-powered travel planning assistant using multi-agent workflows to generate personalized itineraries,
+							recommend destinations, optimize budgets, and provide real-time travel insights.
+						</p>
+						<p style="font-style: italic;">Python, LangGraph, LangChain, OpenAI API, Streamlit</p>
+						<a class="button" style="font-size: small;" id="learnMoreBtn10">Learn More</a>
+					</li>
+
 					<!-- <li>
 						<span class="icon solid major style5 "><i class=" fa-solid fa-rocket" style="font-size: 2.75rem;
 										line-height: 1.3;"></i></span><br>
@@ -400,7 +430,43 @@
 							<p style="font-style: italic;">SQLite, Streamlit, MongoDB, Python</p>
 						</div>
 					</div>
-					
+
+					<!-- Modal for CareerGuidanceAI -->
+					<div id="myModal9" class="modal">
+						<div class="modal-content">
+							<span class="close">&times;</span>
+							<h2 style="margin-bottom: 0%;">CareerGuidanceAI</h2>
+							<p style="font-style: italic; margin-bottom: 0%;">2025</p>
+							<p style="font-weight: bold; margin-bottom: 0%;">Description: </p>
+							<p style="text-align: left;margin-bottom: 0%;">
+								Built an agentic AI career guidance system using LangGraph with multi-agent orchestration to deliver personalized career recommendations.
+								Implemented skill gap analysis agents that compare user profiles against real-time job market data to identify upskilling opportunities.
+								Designed a learning path generation pipeline that curates courses, certifications, and projects tailored to target roles.
+								Deployed the application with a Streamlit interface for interactive career exploration and dynamic agent-driven conversations.
+							</p>
+							<p style="font-weight: bold; margin-bottom: 0%;">Tech Stack: </p>
+							<p style="font-style: italic;">Python, LangGraph, LangChain, Azure OpenAI, Streamlit</p>
+						</div>
+					</div>
+
+					<!-- Modal for PlanMyTrip -->
+					<div id="myModal10" class="modal">
+						<div class="modal-content">
+							<span class="close">&times;</span>
+							<h2 style="margin-bottom: 0%;">PlanMyTrip</h2>
+							<p style="font-style: italic; margin-bottom: 0%;">2025</p>
+							<p style="font-weight: bold; margin-bottom: 0%;">Description: </p>
+							<p style="text-align: left;margin-bottom: 0%;">
+								Developed an AI-powered travel planning assistant using multi-agent workflows built with LangGraph to generate personalized itineraries.
+								Implemented destination recommendation agents that factor in user preferences, seasonality, and budget constraints for optimal trip planning.
+								Built budget optimization modules that compare flights, accommodations, and activities across multiple providers to minimize costs.
+								Integrated real-time travel data APIs to provide up-to-date pricing, weather forecasts, and local event information for informed decision-making.
+							</p>
+							<p style="font-weight: bold; margin-bottom: 0%;">Tech Stack: </p>
+							<p style="font-style: italic;">Python, LangGraph, LangChain, OpenAI API, Streamlit</p>
+						</div>
+					</div>
+
 					<!-- Modal for SpaceX -->
 					<!-- <div id="myModal7" class="modal">
 						<div class="modal-content">
@@ -425,22 +491,53 @@
 					<h2>Work Experience</h2>
 				</header>
 				<div class="container">
-					
+
 					<div class="timeline">
 
 						<div class="timeline-row">
 							<div class="timeline-time">
-								Data Analytics and Software Developer Intern <p style="font-size: medium; margin-bottom: 0;">Van Brunt & Associates, Texas
-								</p><small>May 2025 -
-									August 2025</small>
+								Data Science & AI Intern<p style="font-size: medium; margin-bottom: 0;">Carlisle Construction Materials, Pennsylvania
+								</p><small>Jan 2026 –
+									May 2026</small>
+							</div>
+							<div class="timeline-content">
+								<ul style="align-items: left; list-style-type:disc;text-align: left;margin-bottom: 0">
+									<li>Developed an agentic AI system using LangGraph and Azure OpenAI to automate extraction and classification of construction product specifications from unstructured documents, reducing manual review time by 40%.</li>
+									<li>Built a multi-agent orchestration pipeline for intelligent document parsing, leveraging RAG with vector search to answer technical queries across 10,000+ product datasheets.</li>
+									<li>Designed and deployed a Streamlit-based internal tool for quality engineers to query product compliance data in natural language, increasing team productivity by 25%.</li>
+									<li>Implemented CI/CD pipelines with Docker and GitHub Actions for model versioning and deployment to Azure, ensuring reproducibility and scalability across environments.</li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="timeline-row">
+							<div class="timeline-time">
+								AI Engineer Intern<p style="font-size: medium; margin-bottom: 0;">Pegasus Knowledge Solution Inc.
+								</p><small>Aug 2025 –
+									Oct 2025</small>
+							</div>
+							<div class="timeline-content">
+								<ul style="align-items: left; list-style-type:disc;text-align: left;margin-bottom: 0">
+									<li>Architected and deployed a production-grade RAG pipeline using LangChain, ChromaDB, and Azure OpenAI, enabling semantic search over 50,000+ enterprise knowledge articles with 92% retrieval accuracy.</li>
+									<li>Fine-tuned open-source LLMs (LLaMA 3, Mistral) on domain-specific corpora using LoRA and QLoRA, achieving a 15% improvement in task-specific response quality.</li>
+									<li>Built a multi-agent system using LangGraph for automated report generation, integrating tool-use agents with SQL databases and REST APIs for real-time data retrieval.</li>
+									<li>Developed evaluation frameworks using RAGAS and custom metrics to benchmark RAG pipeline performance, driving iterative improvements in chunking strategy and prompt design.</li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="timeline-row">
+							<div class="timeline-time">
+								Data Science Intern<p style="font-size: medium; margin-bottom: 0;">Van Brunt & Associates, Texas
+								</p><small>May 2025 –
+									Aug 2025</small>
 							</div>
 							<div class="timeline-content">
 								<ul style="align-items: left; list-style-type:disc;text-align: left;margin-bottom: 0">
 									<li>Designed and deployed a modular machine learning pipeline to forecast daily and weekly peak loads in the ERCOT grid, achieving an 18% improvement in predictive accuracy.</li>
-									<li>Engineered robust feature sets by integrating ERCOT system forecasts, multi-source weather data, and tariff-based signals such as 4CP demand indicators</li>
+									<li>Engineered robust feature sets by integrating ERCOT system forecasts, multi-source weather data, and tariff-based signals such as 4CP demand indicators.</li>
 									<li>Built a dual-objective model to simultaneously forecast load and identify 4CP events, attaining 87% precision and reducing commercial billing risk.</li>
-									<li>Incorporated price signals, battery dispatch profiles, and weather anomalies to enhance temporal load sensitivity, resulting in a 14% boost in model performance.</li>
-									<li> Implemented a scalable and reproducible pipeline using Python, SQL, and MLflow, enabling seamless experimentation and production deployment.</li>
+									<li>Implemented a scalable and reproducible pipeline using Python, SQL, and MLflow, enabling seamless experimentation and production deployment.</li>
 								</ul>
 							</div>
 						</div>
@@ -448,50 +545,15 @@
 						<div class="timeline-row">
 							<div class="timeline-time">
 								Senior Software Engineer<p style="font-size: medium; margin-bottom: 0;">Infosys, Bangalore
-								</p><small>August 2019 -
-									March 2024</small>
+								</p><small>Aug 2019 –
+									Mar 2024</small>
 							</div>
 							<div class="timeline-content">
 								<ul style="align-items: left; list-style-type:disc;text-align: left;margin-bottom: 0">
-									<li> Increased operational efficiency by 15% through diagnosing & resolving client system issues, while developing 
-										customized application programs to meet unique client requirements </li>
-									<li>Collaborated with cross-functional teams to ensure consistent system integration and timely project delivery</li>
-									<li>Optimized and refactored code, resulting in 10% improvement in system performance</li>
-									<li>Automated client reports by utilizing DB2 SQL, significantly enhancing reporting accuracy and reducing manual efforts </li>
-									<li> Designed and maintained application programs for IBM I systems using RPGLE and CLLE, ensuring high reliability</li>
-								</ul>
-							</div>
-						</div>
-
-						<div class="timeline-row">
-							<div class="timeline-time">
-								Software Engineer Intern<p style="font-size: medium; margin-bottom: 0;">Infosys, Mysore</p><small>Jan 2019
-									- May 2019</small>
-							</div>
-							<div class="timeline-content">
-								<ul style="align-items: left; list-style-type:disc;text-align: left; margin-bottom: 0;">
-									<li>Led the development of a comprehensive full stack application tailored for Nike retailers, ensuring seamless integration 
-										between front-end and back-end components </li>
-									<li>Engineered backend using JAVA, Spring Boot and RESTful Web services API </li>
-									<li>Designed and implemented the front-end interface with Angular and utilized MySQL for database management </li>
-									
-								</ul>
-							</div>
-						</div>
-
-						<div class="timeline-row">
-							<div class="timeline-time">
-								Software Engineer Intern<p style="font-size: medium; margin-bottom: 0;">Biztime IT Solutions</p><small>May 2018
-									- July 2018</small>
-							</div>
-							<div class="timeline-content">
-								<ul style="align-items: left; list-style-type:disc;text-align: left;margin-bottom: 0">
-									<li>Contributed to the development of ZonalDesk, a mobile application designed to deliver fast and reliable everyday services 
-										to people in rural areas with limited accessibility </li>
-									<li>Played a key role in implementing Google Maps API to create an intuitive and functional map interface, enhancing the 
-										app’s usability and service accessibility </li>
-									<li>Utilized Android Studio for app development, ensuring a smooth user experience on low-resource devices .</li>
-									
+									<li>Led development of ETL pipelines processing 2M+ daily records using Python and DB2 SQL, reducing data latency by 30% and enabling real-time dashboards for stakeholders.</li>
+									<li>Built predictive models for client churn analysis using Scikit-Learn and XGBoost, achieving 89% AUC and directly informing retention strategies that reduced churn by 12%.</li>
+									<li>Automated reporting workflows with Python and SQL, eliminating 20+ hours/week of manual effort and improving reporting accuracy by 35%.</li>
+									<li>Collaborated with cross-functional teams to design and maintain application programs for IBM i systems using RPGLE and CLLE, ensuring 99.9% system uptime.</li>
 								</ul>
 							</div>
 						</div>
@@ -544,8 +606,8 @@
 					<div class="content">
 						<h2>BE Computer Science</h2>
 						<h4 style="font-style: italic;">Nitte Meenakshi Institute of Technology</h4>
-						<p style="margin-bottom: 0;">GPA: 3.70</p>
-						<small>August 2015 - May 2019</small>
+						<p style="margin-bottom: 0;">GPA: 3.65</p>
+						<small>Jun 2015 – Aug 2019</small>
 						<!-- <div class="expandable-container", id="cw2">
 							<p>
 								<button class="expandable-button",id="cw2",
@@ -589,197 +651,113 @@
 					<h2>Skills and Interests</h2>
 					<ul class="statistics">
 						<li class="style1">
-							<span class="icon"><i class=" fa-brands fa-python" style="font-size: 2.75rem;
+							<span class="icon"><i class="fa-brands fa-python" style="font-size: 2.75rem;
 					line-height: 1.3;"></i></span><br>
 							Python
 						</li>
 						<li class="style2">
-							<span class="icon"><i class=" fa-solid fa-brain" aria-hidden="true" style="font-size: 2.75rem;
+							<span class="icon"><i class="fa-solid fa-brain" aria-hidden="true" style="font-size: 2.75rem;
 					line-height: 1.3;"></i></span><br>
 							ML
 						</li>
 						<li class="style3">
-							<span class="icon"><i class=" fa-solid fa-language" aria-hidden="true" style="font-size: 2.75rem;
+							<span class="icon"><i class="fa-solid fa-robot" aria-hidden="true" style="font-size: 2.75rem;
 					line-height: 1.3;"></i></span><br>
-							NLP
+							GenAI
 						</li>
 						<li class="style4">
-							<span class="icon"><i class=" fa-solid fa-timeline" aria-hidden="true" style="font-size: 2.75rem;
+							<span class="icon"><i class="fa-solid fa-cloud" aria-hidden="true" style="font-size: 2.75rem;
 					line-height: 1.3;"></i></span><br>
-							Data Engineering
+							Cloud
 						</li>
 						<li class="style5">
-							<span class="icon"><i class="  fa-solid fa-eye"" aria-hidden=" true" style="font-size: 2.75rem;
+							<span class="icon"><i class="fa-solid fa-language" aria-hidden="true" style="font-size: 2.75rem;
 					line-height: 1.3;"></i></span><br>
-							Computer Vision
+							NLP
 						</li>
 					</ul>
 				</header>
 				<ul class="features" style="align-items: center; align-items: flex-start;">
 					<li style="">
-						<h4 style=" font-weight: bold;">Machine Learning & AI</h4>
-					<div
-						style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center;justify-content: center;">
-						<div style="padding: 5px 10px; border-radius: 5px; font-size: 14px;">
-							<div class="skill">Machine Learning Algorithms</div>
-							<div class="skill">PyTorch</div>
-							<div class="skill">Hugging Face</div>
-							<div class="skill">Scikit-learn</div>
-							<!-- <div class="skill">NLTK</div> -->
-							<div class="skill">Keras</div>
-							<div class="skill">TensorFlow</div>
-							<div class="skill">Deep Learning</div>
-							<div class="skill">Computer Vision</div>
-							<div class="skill">Natural Language Processing (NLP)</div>
-							<div class="skill">Large Language Models (LLMs)</div>
-
-
-							<div class="skill">Object Detection and Tracking</div>
-						</div>
-					</div>
-					<h4 style="font-weight: bold;">Domain-Specific Knowledge</h4>
-					<div
-						style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: center;">
-						<div style="padding: 5px 10px; border-radius: 5px; font-size: 14px;">
-							<div class="skill">Data Science Methodology</div>
-							<div class="skill">Data-Driven Insights</div>
-							<!-- <div class="skill">ETL and ELT Design</div> -->
-							<div class="skill">Software Engineering</div>
-						</div>
-					</div>
-					<h4 style="font-weight: bold;">Generative AI</h4>
-					<div
-						style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: center;">
-						<div style="padding: 5px 10px; border-radius: 5px; font-size: 14px;">
-							<div class="skill">RAG</div>
-							<div class="skill">AI-Agents</div>
-							<!-- <div class="skill">ETL and ELT Design</div> -->
-							<div class="skill">LLM fine-tuning</div>
-							<div class="skill">Azure OpenAI</div>
-							<div class="skill">LlamaIndex</div>
-						</div>
-					</div>
-					</li>
-					<li style="">
-						<h4 style="font-weight: bold;">Big Data & Data Engineering</h4>
-						<div
-							style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center;justify-content: center;">
-							<div style="padding: 5px 10px; border-radius: 5px;font-size: 14px;">
-								<div class="skill">Apache Spark</div>
-								<!-- <div class="skill">Apache Kafka</div>
-								<div class="skill">Apache Hive</div>
-								<div class="skill">Apache Airflow</div> -->
-								<div class="skill">HDFS</div>
-								<div class="skill">Spark SQL</div>
-								<!-- <div class="skill">Structured Streaming</div> -->
+						<h4 style="font-weight: bold;">ML & AI Frameworks</h4>
+						<div style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: center;">
+							<div style="padding: 5px 10px; border-radius: 5px; font-size: 14px;">
+								<div class="skill">Scikit-Learn</div>
+								<div class="skill">PyTorch</div>
+								<div class="skill">TensorFlow</div>
+								<div class="skill">Keras</div>
+								<div class="skill">PySpark</div>
+								<div class="skill">LangChain</div>
+								<div class="skill">LangGraph</div>
+								<div class="skill">vLLM</div>
+								<div class="skill">Hugging Face</div>
 							</div>
 						</div>
-						<h4 style="font-weight: bold;">Data Analysis & Visualization</h4>
-						<div
-							style="display: flex; flex-wrap: wrap; gap: 10px align-items: center;justify-content: center;">
+						<h4 style="font-weight: bold;">LLM & GenAI</h4>
+						<div style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: center;">
 							<div style="padding: 5px 10px; border-radius: 5px; font-size: 14px;">
-								<div class="skill">Pandas</div>
-								<!-- <div class="skill">Kibana</div> -->
-								<div class="skill">Matplotlib</div>
-								<div class="skill">Plotly</div>
-								<div class="skill">Seaborn</div>
-								<!-- <div class="skill">Logstash</div> -->
-								<div class="skill">Tableau</div>
-								<!-- <div class="skill">Logstash</div> -->
-
+								<div class="skill">Prompt Engineering</div>
+								<div class="skill">RAG</div>
+								<div class="skill">Fine-Tuning</div>
+								<div class="skill">Agentic AI</div>
+								<div class="skill">Azure OpenAI</div>
+								<div class="skill">Multi-Agent Orchestration</div>
+								<div class="skill">Claude Code</div>
 							</div>
 						</div>
-						<!-- <h4 style="font-weight: bold;">Testing & Quality Assurance</h4>
-						<div
-							style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: center;">
+						<h4 style="font-weight: bold;">Cloud & MLOps</h4>
+						<div style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: center;">
 							<div style="padding: 5px 10px; border-radius: 5px; font-size: 14px;">
-								<div class="skill">Selenium</div>
-								<div class="skill">Test Automation</div>
-								<div class="skill">PyTest</div>
-								<div class="skill">API Testing</div>
-							</div>
-						</div> -->
-					
-					<!-- <li style=""> -->
-						<h4 style="font-weight: bold;">Programming Languages</h4>
-						<div
-							style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: center;">
-							<div style="padding: 5px 10px; border-radius: 5px; font-size: 14px;">
-								<div class="skill">Python (proficient)</div>
-								<div class="skill">JAVA (proficient)</div>
-								<div class="skill">C++</div>
-								<div class="skill">RPGLE</div>
-								<div class="skill">CLLE</div>
-								<div class="skill">R</div>
-							</div>
-						</div>
-						<h4 style="font-weight: bold;">Databases</h4>
-						<div
-							style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center;justify-content: center;">
-							<div style="padding: 5px 10px; border-radius: 5px; font-size: 14px;">
-								<div class="skill">MongoDB</div>
-								<div class="skill">MySQL</div>
-								<div class="skill">chroma DB</div>
-								<div class="skill">FASSIA</div>
-							</div>
-						</div>
-						<h4 style="font-weight: bold;">DevOps & Cloud</h4>
-						<div
-							style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center;justify-content: center;">
-							<div style="padding: 5px 10px; border-radius: 5px; font-size: 14px;">
-								<div class="skill">Firebase</div>
-								<!-- <div class="skill">Jenkins</div> -->
-								<!-- <div class="skill">Kubernetes</div> -->
-								<div class="skill">Linux</div>
-								<div class="skill">AWS</div>
-								<div class="skill">CICD</div>
-								<div class="skill">GitHub Actions</div>
-								<div class="skill">Dockers</div>
+								<div class="skill">AWS (EC2, S3, Lambda, SageMaker)</div>
+								<div class="skill">GCP</div>
+								<div class="skill">Azure</div>
+								<div class="skill">Docker</div>
+								<div class="skill">CI/CD</div>
+								<div class="skill">MLflow</div>
 								<div class="skill">Apache Airflow</div>
-								<!-- <div class="skill">LXC (Linux Containers)</div> -->
-							</div>
-						</div>
-						<!-- <h4 style="font-weight: bold;">Other Technical Skills</h4>
-						<div
-							style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: center;">
-							<div style="padding: 5px 10px; border-radius: 5px; font-size: 14px;">
-								<div class="skill">OCR (Optical Character Recognition)</div>
-								<div class="skill">Time Series Analysis</div>
-							</div>
-						</div> -->
-					</li>
-					<!--<li style="">
-						<h4 style="font-weight: bold;">Domain-Specific Knowledge</h4>
-						<div style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: center;">
-							<div style="padding: 5px 10px; border-radius: 5px; font-size: 14px;">
-								<div class="skill">Data Science Methodology</div>
-								<div class="skill">Data-Driven Insights</div>
-								<div class="skill">ETL and ELT Design</div>
-								<div class="skill">Software Engineering</div>
+								<div class="skill">DVC</div>
+								<div class="skill">W&B</div>
 							</div>
 						</div>
 					</li>
 					<li style="">
-						<h4 style="font-weight: bold;">Testing & Quality Assurance</h4>
+						<h4 style="font-weight: bold;">Data & Analytics</h4>
 						<div style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: center;">
 							<div style="padding: 5px 10px; border-radius: 5px; font-size: 14px;">
-								<div class="skill">Selenium</div>
-								<div class="skill">Test Automation</div>
-								<div class="skill">PyTest</div>
-								<div class="skill">API Testing</div>
+								<div class="skill">Python</div>
+								<div class="skill">R</div>
+								<div class="skill">SQL</div>
+								<div class="skill">NoSQL</div>
+								<div class="skill">MongoDB</div>
+								<div class="skill">Pandas</div>
+								<div class="skill">NumPy</div>
+								<div class="skill">Tableau</div>
+								<div class="skill">Power BI</div>
+								<div class="skill">Matplotlib</div>
+								<div class="skill">Seaborn</div>
+							</div>
+						</div>
+						<h4 style="font-weight: bold;">Core Competencies</h4>
+						<div style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: center;">
+							<div style="padding: 5px 10px; border-radius: 5px; font-size: 14px;">
+								<div class="skill">Statistical Analysis</div>
+								<div class="skill">Predictive Modeling</div>
+								<div class="skill">NLP</div>
+								<div class="skill">Computer Vision</div>
+								<div class="skill">Time Series (LSTM)</div>
+								<div class="skill">A/B Testing</div>
+								<div class="skill">ETL</div>
+							</div>
+						</div>
+						<h4 style="font-weight: bold;">Certifications</h4>
+						<div style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: center;">
+							<div style="padding: 5px 10px; border-radius: 5px; font-size: 14px;">
+								<div class="skill">AWS Solutions Architect – Associate</div>
+								<div class="skill">IBM Professional Data Science</div>
+								<div class="skill">DeepLearning.AI TensorFlow Developer</div>
 							</div>
 						</div>
 					</li>
-					<li style="">
-						<h4 style="font-weight: bold;">Other Technical Skills</h4>
-						<div style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: center;">
-							<div style="padding: 5px 10px; border-radius: 5px; font-size: 14px;">
-								<div class="skill">OCR (Optical Character Recognition)</div>
-								<div class="skill">Time Series Analysis</div>
-							</div>
-						</div>
-					</li>-->
-
 				</ul>
 			</section>
 		</div>
@@ -913,6 +891,38 @@
 		window.onclick = function (event) {
 			if (event.target == modal8) {
 				modal8.style.display = "none";
+			}
+		}
+
+		// CareerGuidanceAI
+		var modal9 = document.getElementById("myModal9");
+		var btn9 = document.getElementById("learnMoreBtn9");
+		var span9 = modal9.getElementsByClassName("close")[0];
+		btn9.onclick = function () {
+			modal9.style.display = "block";
+		}
+		span9.onclick = function () {
+			modal9.style.display = "none";
+		}
+		window.onclick = function (event) {
+			if (event.target == modal9) {
+				modal9.style.display = "none";
+			}
+		}
+
+		// PlanMyTrip
+		var modal10 = document.getElementById("myModal10");
+		var btn10 = document.getElementById("learnMoreBtn10");
+		var span10 = modal10.getElementsByClassName("close")[0];
+		btn10.onclick = function () {
+			modal10.style.display = "block";
+		}
+		span10.onclick = function () {
+			modal10.style.display = "none";
+		}
+		window.onclick = function (event) {
+			if (event.target == modal10) {
+				modal10.style.display = "none";
 			}
 		}
 
