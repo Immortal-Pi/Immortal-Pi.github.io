@@ -2,6 +2,17 @@ import { LinkedInArticle } from "@/lib/types";
 
 export const linkedinArticles: LinkedInArticle[] = [
   {
+    title: "Can Knowledge graphs solve memory problem in Agentic AI systems",
+    date: "2026-04-12",
+    excerpt:
+      "I was building an agentic personal assistant and hit the wall everyone hits - my agents kept forgetting everything. Context lost mid-conversation. Zero recall across sessions. No ability to connect the dots between people, projects, and deadlines. So I built a 3-layer memory architecture inspired by how human cognition actually works - conversation context with smart compaction, short-term memory that persists across sessions, and a long-term knowledge graph where edges decay and strengthen like real synapses.",
+
+    tags: ["OpenClaw", "Neo4j", "Gephi", "Personal Assistant"],
+    linkedinUrl:
+      "https://www.linkedin.com/pulse/can-knowledge-graphs-solve-memory-problem-agentic-ai-systems-pai-vk2mc/",
+  },
+  
+  {
     title:
       "Powering the Future: My Internship at the Heart of Texas Energy Landscape",
     date: "2025-08-07",

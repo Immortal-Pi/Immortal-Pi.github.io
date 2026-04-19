@@ -1,18 +1,13 @@
 "use client";
 
 import { Separator } from "@/components/ui/separator";
-import { BlogPost, LinkedInArticle } from "@/lib/types";
-import BlogCard from "@/components/blog/BlogCard";
+import { LinkedInArticle } from "@/lib/types";
 import ArticleCard from "@/components/blog/ArticleCard";
 import GlitchText from "@/components/fx/GlitchText";
 import TypedText from "@/components/fx/TypedText";
 import { Reveal } from "@/components/fx/Reveal";
 
-export type BlogItem =
-  | { kind: "post"; data: BlogPost }
-  | { kind: "article"; data: LinkedInArticle };
-
-export default function BlogPageClient({ items }: { items: BlogItem[] }) {
+export default function BlogPageClient({ items }: { items: LinkedInArticle[] }) {
   return (
     <div className="pt-28 pb-24 px-6">
       <div className="max-w-4xl mx-auto">
@@ -43,13 +38,9 @@ export default function BlogPageClient({ items }: { items: BlogItem[] }) {
         ) : (
           <Reveal>
             <div className="flex flex-col gap-4">
-              {items.map((item) =>
-                item.kind === "post" ? (
-                  <BlogCard key={item.data.slug} post={item.data} />
-                ) : (
-                  <ArticleCard key={item.data.linkedinUrl} article={item.data} />
-                )
-              )}
+              {items.map((article) => (
+                <ArticleCard key={article.linkedinUrl} article={article} />
+              ))}
             </div>
           </Reveal>
         )}

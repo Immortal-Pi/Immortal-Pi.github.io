@@ -1,7 +1,6 @@
 import { Metadata } from "next";
-import { getAllPosts } from "@/lib/blog";
 import { linkedinArticles } from "@/data/articles";
-import BlogPageClient, { BlogItem } from "@/components/blog/BlogPageClient";
+import BlogPageClient from "@/components/blog/BlogPageClient";
 
 export const metadata: Metadata = {
   title: "Blog",
@@ -9,12 +8,8 @@ export const metadata: Metadata = {
 };
 
 export default function BlogPage() {
-  const posts = getAllPosts();
-
-  const items: BlogItem[] = [
-    ...posts.map((p) => ({ kind: "post" as const, data: p })),
-    ...linkedinArticles.map((a) => ({ kind: "article" as const, data: a })),
-  ].sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
-
+  const items = [...linkedinArticles].sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+  );
   return <BlogPageClient items={items} />;
 }
