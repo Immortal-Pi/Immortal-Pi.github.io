@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, FormEvent } from "react";
+import Image from "next/image";
 import { Send, CheckCircle, AlertCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -35,7 +36,16 @@ export default function ContactForm() {
   }
 
   return (
-    <Card className="bg-card border-border/50 max-w-xl mx-auto">
+    <Card className="bg-card border-border/60 max-w-xl mx-auto overflow-hidden">
+      <div className="relative w-full h-72 sm:h-96">
+        <Image
+          src="/images/contact2.jpg"
+          alt="Get in touch"
+          fill
+          className="object-cover"
+          priority
+        />
+      </div>
       <CardHeader>
         <CardTitle>Get in Touch</CardTitle>
         <CardDescription>
