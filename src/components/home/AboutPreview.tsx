@@ -46,7 +46,7 @@ export default function AboutPreview() {
               priority
             />
             <Image
-              src={personal.profileImage}
+              src={personal.profileImage2}
               alt=""
               aria-hidden
               width={300}
@@ -54,7 +54,7 @@ export default function AboutPreview() {
               className="glitch glitch-red rounded-xl object-cover"
             />
             <Image
-              src={personal.profileImage}
+              src={personal.profileImage3}
               alt=""
               aria-hidden
               width={300}

@@ -249,7 +249,7 @@
   position: relative;
    filter: brightness(0.7) contrast(1.4) saturate(1.2);
   animation: glitch-main 0.5s steps(1, end) infinite,
-  flicker 0.3s infinite alternate;
+  flicker 0.2s infinite alternate;
 }
 .glitch-container .glitch-red {
   mix-blend-mode: screen;

@@ -10,6 +10,8 @@ export const personal = {
     "Engaging in team-based initiatives to apply AI and machine learning principles to solve industry-relevant problems.",
     "Developing agentic AI solutions that leverage generative models for autonomous task execution, dynamic tool use, and adaptive reasoning.",
   ],
-  profileImage: "/images/profile.jpg",
+  profileImage: "/images/profile4.png",
+  profileImage2: "/images/profile2.png",
+  profileImage3: "/images/profile3.png",
   resumeUrl: "/resume/Amruth_DS_resume.pdf",
 };
