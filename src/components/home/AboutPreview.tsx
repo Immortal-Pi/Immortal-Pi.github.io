@@ -3,6 +3,7 @@ import { personal } from "@/data/personal";
 import { Card, CardContent } from "@/components/ui/card";
 import SectionHeader from "@/components/fx/SectionHeader";
 import { Reveal } from "@/components/fx/Reveal";
+import TypedText from "@/components/fx/TypedText";
 
 export default function AboutPreview() {
   return (
@@ -13,8 +14,8 @@ export default function AboutPreview() {
         <Reveal>
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-12 items-start">
           <div className="flex flex-col gap-6">
-            <p className="text-muted-foreground text-lg leading-relaxed">
-              {personal.about}
+            <p className="matrix-veil text-muted-foreground text-lg leading-relaxed">
+              <TypedText text={personal.about} speed={18} startOnView />
             </p>
 
             <Card className="bg-card corner-brackets">
