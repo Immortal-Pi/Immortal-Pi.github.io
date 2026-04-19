@@ -22,7 +22,7 @@ export default function ContactPageClient() {
             style={{ animationDelay: "0.4s", animationFillMode: "forwards" }}
           >
             <TypedText
-              text="Want to take the blue pill?"
+              text="Want to take the red pill?"
               delay={500}
               speed={40}
             />
