@@ -41,7 +41,7 @@ export default function AboutPreview() {
               alt="Amruth Pai"
               width={300}
               height={380}
-              className="relative rounded-xl border border-border object-cover w-full"
+              className="relative rounded-xl border border-border object-cover w-full glitch-image"
               priority
             />
           </div>

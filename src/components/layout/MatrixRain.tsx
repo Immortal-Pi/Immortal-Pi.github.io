@@ -28,103 +28,51 @@ export default function MatrixRain() {
       "アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン";
     const latin = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     const nums = "0123456789";
-    const symbols = "{}<>/=+$;:*#&%?!|\\[]()";
-    const greek = "πλΣΩ∆∇∞";
-    const words = ["Amruth Pai", "Immortal Pi", "Pai", "ML Engineer", "UT Dallas", "Texas"];
+    const words = ["Amruth Pai", "Immortal Pi", "Pai", "ML Engineer", "UT Dallas","AI Engineer", "Data Scientist"];
 
     const chars = [
       ...katakana.repeat(3),
-      ...latin.repeat(2),
-      ...nums.repeat(2),
-      ...symbols.repeat(2),
-      ...greek,
+      ...latin.repeat(3),
+      ...nums.repeat(3),
       ...words,
     ];
 
-    const isMobile = window.innerWidth < 768;
-    const fontNear = isMobile ? 20 : 14;
-    const fontFar = isMobile ? 13 : 10;
+    const fontSize = window.innerWidth < 768 ? 18 : 16;
+    let columns = Math.floor(canvas.width / fontSize);
+    let drops: number[] = Array.from({ length: columns }, () => 1);
 
-    type Layer = {
-      fontSize: number;
-      columns: number;
-      drops: number[];
-      speed: number;
-      trailColor: string;
-      headAlpha: number;
-    };
-
-    const buildLayer = (fontSize: number, speed: number, trailColor: string, headAlpha: number): Layer => {
-      const columns = Math.floor(canvas.width / fontSize);
-      return {
-        fontSize,
-        columns,
-        drops: Array.from({ length: columns }, () => Math.floor(Math.random() * (canvas.height / fontSize))),
-        speed,
-        trailColor,
-        headAlpha,
-      };
-    };
-
-    let farLayer = buildLayer(fontFar, 0.55, "rgba(0, 180, 80, 0.55)", 0.55);
-    let nearLayer = buildLayer(fontNear, 1, "#0f0", 1);
-
-    const FRAME_INTERVAL = 55;
+    const FRAME_INTERVAL = 60;
     let lastTime = 0;
     let rafId: number;
-
-    const drawLayer = (layer: Layer, mostlyHead = true) => {
-      ctx.font = `${layer.fontSize}px monospace`;
-      for (let i = 0; i < layer.drops.length; i++) {
-        const idx = Math.floor(Math.random() * chars.length);
-        const text = chars[idx];
-        const x = i * layer.fontSize;
-        const y = layer.drops[i] * layer.fontSize;
-
-        if (mostlyHead) {
-          const r = Math.random();
-          if (r < 0.06) {
-            ctx.fillStyle = `oklch(0.7 0.15 310 / ${layer.headAlpha})`;
-          } else if (r < 0.1) {
-            ctx.fillStyle = `oklch(0.72 0.12 230 / ${layer.headAlpha})`;
-          } else {
-            ctx.fillStyle = `rgba(255, 255, 255, ${layer.headAlpha})`;
-          }
-        } else {
-          ctx.fillStyle = layer.trailColor;
-        }
-        ctx.fillText(text, x, y);
-
-        if (layer.drops[i] - 1 > 0) {
-          const tIdx = Math.floor(Math.random() * chars.length);
-          ctx.fillStyle = layer.trailColor;
-          ctx.fillText(chars[tIdx], x, y - layer.fontSize);
-        }
-
-        if (y > canvas.height && Math.random() > 0.975) {
-          layer.drops[i] = 0;
-        }
-        layer.drops[i] += layer.speed;
-      }
-    };
 
     const draw = (timestamp: number) => {
       rafId = requestAnimationFrame(draw);
       if (timestamp - lastTime < FRAME_INTERVAL) return;
       lastTime = timestamp;
 
-      ctx.fillStyle = "rgba(0, 0, 0, 0.08)";
+      ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      drawLayer(farLayer);
-      drawLayer(nearLayer);
+      ctx.fillStyle = "#0F0";
+      ctx.font = `${fontSize}px monospace`;
+
+      for (let i = 0; i < drops.length; i++) {
+        const text = chars[Math.floor(Math.random() * chars.length)];
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+          drops[i] = 0;
+        }
+        drops[i]++;
+      }
     };
 
     rafId = requestAnimationFrame(draw);
+
     const onResize = () => {
       resize();
-      farLayer = buildLayer(fontFar, 0.55, "rgba(0, 180, 80, 0.55)", 0.55);
-      nearLayer = buildLayer(fontNear, 1, "#0f0", 1);
+      columns = Math.floor(canvas.width / fontSize);
+      drops = Array.from({ length: columns }, () => 1);
     };
     window.addEventListener("resize", onResize);
 

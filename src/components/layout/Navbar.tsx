@@ -50,7 +50,7 @@ export default function Navbar() {
           className="font-heading font-bold text-lg tracking-tight text-foreground hover:text-primary transition-colors"
         >
           <GlitchText always>
-            AP<span className="text-primary">_</span>
+            Immortal Pi<span className="text-primary">_</span>
           </GlitchText>
         </Link>
 

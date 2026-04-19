@@ -35,7 +35,7 @@ export default function HeroSection() {
         </p>
 
         <h1
-          className="font-heading text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[0.9] mb-8 opacity-0 animate-fade-in"
+          className="matrix-veil font-heading text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[0.9] mb-8 opacity-0 animate-fade-in"
           style={{ animationDelay: "0.4s", animationFillMode: "forwards" }}
         >
           <GlitchText as="span" className="text-foreground" always>Amruth</GlitchText>
@@ -44,7 +44,7 @@ export default function HeroSection() {
         </h1>
 
         <p
-          className="text-muted-foreground text-lg md:text-xl max-w-xl mx-auto leading-relaxed mb-10 opacity-0 animate-fade-in min-h-[3.5rem]"
+          className="matrix-veil text-muted-foreground text-lg md:text-xl max-w-xl mx-auto leading-relaxed mb-10 opacity-0 animate-fade-in min-h-[3.5rem]"
           style={{ animationDelay: "0.6s", animationFillMode: "forwards" }}
         >
           <TypedText
@@ -55,7 +55,7 @@ export default function HeroSection() {
         </p>
 
         <div
-          className="flex items-center justify-center gap-3 mb-10 opacity-0 animate-fade-in"
+          className="matrix-veil flex items-center justify-center gap-3 mb-10 opacity-0 animate-fade-in"
           style={{ animationDelay: "0.8s", animationFillMode: "forwards" }}
         >
           {socialLinks.map((link) => {
@@ -76,7 +76,7 @@ export default function HeroSection() {
         </div>
 
         <div
-          className="flex flex-col sm:flex-row items-center justify-center gap-3 opacity-0 animate-fade-in"
+          className="matrix-veil flex flex-col sm:flex-row items-center justify-center gap-3 opacity-0 animate-fade-in"
           style={{ animationDelay: "1s", animationFillMode: "forwards" }}
         >
           <Button size="lg" className="animate-pulse-neon" nativeButton={false} render={<a href="/resume/Amruth_DS_resume.pdf" download />}>

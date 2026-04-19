@@ -22,6 +22,7 @@ export default function ScrambleText({
 }: Props) {
   const reduced = useReducedMotion();
   const ref = useRef<HTMLElement | null>(null);
+  const rafRef = useRef<number>(0);
   const [display, setDisplay] = useState(reduced ? text : "");
 
   useEffect(() => {
@@ -31,9 +32,9 @@ export default function ScrambleText({
     }
 
     const run = () => {
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
       const start = performance.now();
       const chars = text.split("");
-      let raf = 0;
 
       const tick = (now: number) => {
         const t = Math.min(1, (now - start) / duration);
@@ -46,34 +47,48 @@ export default function ScrambleText({
           })
           .join("");
         setDisplay(out);
-        if (t < 1) raf = requestAnimationFrame(tick);
+        if (t < 1) rafRef.current = requestAnimationFrame(tick);
         else setDisplay(text);
       };
-      raf = requestAnimationFrame(tick);
-      return () => cancelAnimationFrame(raf);
+      rafRef.current = requestAnimationFrame(tick);
     };
 
     if (!triggerOnView) {
-      return run();
+      run();
+      return () => {
+        if (rafRef.current) cancelAnimationFrame(rafRef.current);
+      };
     }
 
     const el = ref.current;
-    if (!el) return run();
+    if (!el) {
+      run();
+      return () => {
+        if (rafRef.current) cancelAnimationFrame(rafRef.current);
+      };
+    }
 
+    let wasOut = true;
     const io = new IntersectionObserver(
       (entries) => {
         for (const e of entries) {
           if (e.isIntersecting) {
-            run();
-            io.disconnect();
-            break;
+            if (wasOut) {
+              wasOut = false;
+              run();
+            }
+          } else {
+            wasOut = true;
           }
         }
       },
       { threshold: 0.3 }
     );
     io.observe(el);
-    return () => io.disconnect();
+    return () => {
+      io.disconnect();
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    };
   }, [text, duration, triggerOnView, reduced]);
 
   const Tag = As as "span";

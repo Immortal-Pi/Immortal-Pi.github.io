@@ -1,7 +1,5 @@
 import { Metadata } from "next";
-import { Separator } from "@/components/ui/separator";
-import { projects } from "@/data/projects";
-import ProjectGrid from "@/components/projects/ProjectGrid";
+import ProjectsPageClient from "@/components/projects/ProjectsPageClient";
 
 export const metadata: Metadata = {
   title: "Projects",
@@ -9,21 +7,5 @@ export const metadata: Metadata = {
 };
 
 export default function ProjectsPage() {
-  return (
-    <div className="pt-28 pb-24 px-6">
-      <div className="max-w-6xl mx-auto">
-        <div className="max-w-2xl mb-14">
-          <h1 className="font-heading text-4xl font-bold tracking-tight text-foreground mb-3">
-            Projects
-          </h1>
-          <p className="text-muted-foreground text-lg leading-relaxed">
-            ML, AI, and data engineering work — from deep learning models to
-            production pipelines and intelligent applications.
-          </p>
-        </div>
-        <Separator className="mb-12" />
-        <ProjectGrid projects={projects} />
-      </div>
-    </div>
-  );
+  return <ProjectsPageClient />;
 }
