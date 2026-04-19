@@ -22,9 +22,9 @@ export default function ContactPageClient() {
             style={{ animationDelay: "0.4s", animationFillMode: "forwards" }}
           >
             <TypedText
-              text="Interested in collaborating or have a question? I'd love to hear from you."
+              text="Want to take the blue pill?"
               delay={500}
-              speed={22}
+              speed={40}
             />
           </p>
         </div>
