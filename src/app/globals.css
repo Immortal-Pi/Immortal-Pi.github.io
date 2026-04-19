@@ -254,7 +254,7 @@
 .glitch-container .glitch-red {
   mix-blend-mode: screen;
    filter: drop-shadow(-6px 0 oklch(0% 0 0 / 0.5));
-  opacity: 0.6;
+  opacity: 0.3;
   animation: glitch-red 2s steps(1, end) infinite;
   
   pointer-events: none;
@@ -262,7 +262,7 @@
 .glitch-container .glitch-blue {
   mix-blend-mode: screen;
   filter: drop-shadow(6px 0 oklch(9.693% 0.00001 271.152 / 0.5));
-  opacity: 0.6;
+  opacity: 0.4;
   animation: glitch-blue 2s steps(1, end) infinite;
   
   pointer-events: none;
