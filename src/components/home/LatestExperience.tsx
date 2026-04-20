@@ -7,7 +7,7 @@ import SectionHeader from "@/components/fx/SectionHeader";
 import { Reveal } from "@/components/fx/Reveal";
 
 export default function LatestExperience() {
-  const latest = experiences[0];
+  const latest = experiences.slice(0, 2);
 
   return (
     <section className="py-24 px-6">
@@ -15,7 +15,9 @@ export default function LatestExperience() {
         <SectionHeader title="Latest Experience" />
 
         <Reveal>
-          <TimelineItem exp={latest} />
+          {latest.map((exp) => (
+            <TimelineItem key={exp.company + exp.startDate} exp={exp} />
+          ))}
         </Reveal>
 
         <div className="text-center mt-12">
