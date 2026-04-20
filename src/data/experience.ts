@@ -6,7 +6,7 @@ export const experiences: Experience[] = [
     company: "Carlisle Construction Materials",
     location: "Pennsylvania",
     startDate: "Jan 2026",
-    endDate: "May 2026",
+    endDate: "Aug 2026",
     bullets: [
       "Developed an agentic AI system using LangGraph and Azure OpenAI to automate extraction and classification of construction product specifications from unstructured documents, reducing manual review time by 40%.",
       "Built a multi-agent orchestration pipeline for intelligent document parsing, leveraging RAG with vector search to answer technical queries across 10,000+ product datasheets.",

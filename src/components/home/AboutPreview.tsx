@@ -38,7 +38,7 @@ export default function AboutPreview() {
           <div className="relative group glitch-container w-full max-w-[400px]">
             <div className="absolute -inset-3 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             <Image
-              src={personal.profileImage}
+              src={personal.profileImage3}
               alt="Amruth Pai"
               width={300}
               height={380}
@@ -46,7 +46,7 @@ export default function AboutPreview() {
               priority
             />
             <Image
-              src={personal.profileImage2}
+              src={personal.profileImage3}
               alt=""
               aria-hidden
               width={300}
@@ -54,7 +54,7 @@ export default function AboutPreview() {
               className="glitch glitch-red rounded-xl object-cover"
             />
             <Image
-              src={personal.profileImage3}
+              src={personal.profileImage2}
               alt=""
               aria-hidden
               width={300}

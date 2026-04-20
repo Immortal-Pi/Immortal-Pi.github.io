@@ -42,7 +42,23 @@ export default function ContactForm() {
           src="/images/contact2.jpg"
           alt="Get in touch"
           fill
-          className="object-cover"
+          className="glitch glitch-base relative rounded-xl border border-border object-cover w-full"
+          priority
+        />
+        <Image
+          src="/images/contact2.jpg"
+          alt="Get in touch"
+          aria-hidden
+          fill
+          className="glitch glitch-red rounded-xl object-cover"
+          priority
+        />
+        <Image
+          src="/images/contact2.jpg"
+          alt="Get in touch"
+          aria-hidden
+          fill
+          className="glitch glitch-blue rounded-xl object-cover"
           priority
         />
       </div>
